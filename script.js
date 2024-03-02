@@ -1,24 +1,22 @@
-const countToDate = new Date().setHours(new Date().getHours() + 24)
+const countToDate = new Date().setHours(new Date().getHours())
 let previousTimeBetweenDates
 setInterval(() => {
   const currentDate = new Date()
   const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000)
   flipAllCards(timeBetweenDates)
-
+  console.log(timeBetweenDates)
   previousTimeBetweenDates = timeBetweenDates
 }, 250)
 
-function flipAllCards(time) {
-  const seconds = time % 60
-  const minutes = Math.floor(time / 60) % 60
-  const hours = Math.floor(time / 3600)
 
-  flip(document.querySelector("[data-hours-tens]"), Math.floor(hours / 10))
-  flip(document.querySelector("[data-hours-ones]"), hours % 10)
-  flip(document.querySelector("[data-minutes-tens]"), Math.floor(minutes / 10))
-  flip(document.querySelector("[data-minutes-ones]"), minutes % 10)
-  flip(document.querySelector("[data-seconds-tens]"), Math.floor(seconds / 10))
-  flip(document.querySelector("[data-seconds-ones]"), seconds % 10)
+function flipAllCards(time) {
+  let tempo = new Date()
+  flip(document.querySelector("[data-hours-tens]"), Math.floor(tempo.getHours()/10))
+  flip(document.querySelector("[data-hours-ones]"), tempo.getHours() % 10)
+  flip(document.querySelector("[data-minutes-tens]"), Math.floor(tempo.getMinutes() / 10))
+  flip(document.querySelector("[data-minutes-ones]"), tempo.getMinutes() % 10)
+  flip(document.querySelector("[data-seconds-tens]"), Math.floor(tempo.getSeconds() / 10))
+  flip(document.querySelector("[data-seconds-ones]"), tempo.getSeconds() % 10)
 }
 
 function flip(flipCard, newNumber) {
