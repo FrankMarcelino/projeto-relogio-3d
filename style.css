@@ -33,7 +33,7 @@
   
   .top,
   .flip-card .top-flip {
-    background-color: #212529;
+    background-color: #040404;
     border-top-right-radius: .1em;
     border-top-left-radius: .1em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@
   
   .bottom,
   .flip-card .bottom-flip {
-    background-color: #212529;
+    background-color: #080808;
     display: flex;
     align-items: flex-end;
     border-bottom-right-radius: .1em;
@@ -77,7 +77,7 @@
   }
   
   .container {
-    background-color: #0a0908;
+    background-color: #12110f;
     padding: .5em;
     border-radius: .25em;
     display: flex;
